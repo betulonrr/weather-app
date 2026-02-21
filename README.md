@@ -9,7 +9,7 @@ Neumorphism tasarım diliyle yapılmış, gerçek zamanlı hava durumu uygulamas
 
 #  Önizleme
 
-> Neumorphism (yumuşak kabartma) stili kullanarak daha modern bir görüntü elde ettik. Hover'da geçiş animasyonları, float eden hava ikonu ve staggered açılış animasyonları içeriyor.
+> Neumorphism stili kullanarak daha modern bir görüntü elde ettik. Hover'da geçiş animasyonları, float eden hava ikonu ve staggered açılış animasyonları içermesini istedim.
 
 ##  Özellikler
 
