@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hava Durumu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,700;1,9..144,200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- yan menü API key ve şehir arama butonu -->
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="sidebar-top">
+    <div class="brand">⛅ Hava Durumu</div>
+
+    <div class="search-wrap">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input id="cityInput" class="search-input" type="text" placeholder="Şehir ara..." autocomplete="off" />
+      </div>
+      <button class="search-btn" onclick="fetchWeather()">Git</button>
+    </div>
+
+    <div class="api-setup" id="apiSetup">
+      <p class="api-hint">🔑 <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a>'ten ücretsiz API key al:</p>
+      <div class="api-input-row">
+        <input id="apiKeyInput" class="api-field" type="text" placeholder="API key..." />
+        <button class="api-save-btn" onclick="saveApiKey()">✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- daha önce aranan şehirleri listeleme bölümü -->
+  <div class="history-section">
+    <div class="history-label">SON ARAMALAR</div>
+    <ul class="city-list" id="cityList">
+      <li class="city-empty">Henüz arama yapılmadı</li>
+    </ul>
+  </div>
+
+
+</aside>
+
+<!-- ana menü içerik kısmı girilen şehre göre değiştiriyorum -->
+
+<main class="main" id="main">
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">🌍</div>
+    <div class="empty-title">Bir şehir ara</div>
+    <div class="empty-sub">Soldaki arama kutusundan başla</div>
+  </div>
+
+  <!-- Loading -->
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Yükleniyor...</div>
+  </div>
+
+  <!-- Error -->
+  <div class="main-error" id="mainError"></div>
+
+  <!-- sadece veri girince gözüken sıcaklık gibi değerler -->
+  <div class="weather-panel" id="weatherPanel" style="display:none">
+
+    <!-- şehir adı,emoji ana kısım -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-city" id="heroCity">—</div>
+        <div class="hero-country" id="heroCountry"></div>
+        <div class="hero-date" id="heroDate"></div>
+        <div class="hero-desc" id="heroDesc"></div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-icon" id="heroIcon">—</div>
+        <div class="hero-temp">
+          <span id="heroTemp">—</span>
+          <span class="hero-unit">°C</span>
+        </div>
+        <div class="hero-feels" id="heroFeels"></div>
+      </div>
+    </section>
+
+    <!-- teknik detaylar barı -->
+    <section class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-ico">💧</div>
+        <div class="stat-info">
+          <div class="stat-val" id="statHum">—</div>
+          <div class="stat-lbl">Nem</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-ico">💨</div>
+        <div class="stat-info">
+          <div class="stat-val" id="statWind">—</div>
+          <div class="stat-lbl">Rüzgar</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-ico">👁️</div>
+        <div class="stat-info">
+          <div class="stat-val" id="statVis">—</div>
+          <div class="stat-lbl">Görüş</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-ico">🌡️</div>
+        <div class="stat-info">
+          <div class="stat-val" id="statPress">—</div>
+          <div class="stat-lbl">Basınç</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- nemi gösteren ayrı bar  -->
+    <section class="bar-section">
+      <div class="bar-row">
+        <span class="bar-label">Nem İndeksi</span>
+        <span class="bar-val" id="barVal">—</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
+    </section>
+
+    <!-- 5 günlük tahmin grid yapısı -->
+    <section class="forecast-section">
+      <div class="section-head">5 Günlük Tahmin</div>
+      <div class="forecast-grid" id="forecastGrid"></div>
+    </section>
+
+  </div>
+</main>
+
+<!-- hamburger menü butonu -->
+<button class="mobile-toggle" id="mobileToggle" onclick="toggleSidebar()">☰</button>
+
+<script src="js/app.js"></script>
+</body>
+</html>
