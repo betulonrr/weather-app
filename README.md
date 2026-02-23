@@ -1,15 +1,12 @@
 #  Hava Durumu Uygulaması
 
-Neumorphism tasarım diliyle yapılmış, gerçek zamanlı hava durumu uygulamasıdır.
+Neumorphism tasarım diliyle yapılmış, gerçek zamanlı hava durumu uygulamasıdır. Hover'da geçiş animasyonları, float eden hava ikonu ve staggered açılış animasyonlaıyla daha modern bir görünüme kavuştu.
+Siteye linkten ulaşabilirsiniz.( https://betulonrr.github.io/weather-app/ )
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![API](https://img.shields.io/badge/OpenWeatherMap-API-orange?style=flat)
-
-#  Önizleme
-
-> Neumorphism stili kullanarak daha modern bir görüntü elde ettik. Hover'da geçiş animasyonları, float eden hava ikonu ve staggered açılış animasyonları içermesini istedim.
 
 ##  Özellikler
 
