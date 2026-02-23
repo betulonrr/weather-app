@@ -1,6 +1,6 @@
 #  Hava Durumu Uygulaması
 
-Neumorphism tasarım diliyle yapılmış, gerçek zamanlı hava durumu uygulamasıdır. Hover'da geçiş animasyonları, float eden hava ikonu ve staggered açılış animasyonlaıyla daha modern bir görünüme kavuştu.
+Neumorphism tasarım diliyle yapılmış, gerçek zamanlı hava durumu uygulamasıdır. API adresi ile birlikte istediğiniz lokasyona ait hava durum bilgilerine erişilebilir. Hover'da geçiş animasyonları, float eden hava ikonu ve staggered açılış animasyonlaıyla daha modern bir görünüme kavuştu.
 Siteye linkten ulaşabilirsiniz.( https://betulonrr.github.io/weather-app/ )
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
@@ -45,31 +45,6 @@ cd weather-app
 - API Keys sekmesinden key'ini kopyala
 - Uygulamada çıkan kutucuğa yapıştır ve kaydederek kullanılabilir
 
-> 
 
-##  Proje Yapısı
 
-```
-weather-app/
-├── index.html        # HTML yapısı
-├── css/
-│   └── style.css     # Neumorphism stilleri ve animasyonlar
-├── js/
-│   └── app.js        # API entegrasyonu ve DOM işlemleri
-└── README.md
-```
-
-##  Tasarım Notları
-
-Neumorphism'in temel prensibi uygulanarak aynı arka plan renginde iki zıt gölge kullanıyoruz
-
-```css
-/* Dışa çıkan (convex) görünüm */
---convex: 6px 6px 14px #a3b1c6, -6px -6px 14px #ffffff;
-
-/* İçe gömülü (concave) görünüm — focus ve hover için */
---concave: inset 4px 4px 10px #a3b1c6, inset -4px -4px 10px #ffffff;
-```
-
-Hover durumunda convex → concave geçişi, elementin "basılıyor" hissini vermek amaçlandı 
 
